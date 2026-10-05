@@ -1,0 +1,6 @@
+[package]
+name = "calcli"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

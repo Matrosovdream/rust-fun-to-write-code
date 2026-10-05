@@ -1,0 +1,6 @@
+[package]
+name = "romannum"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

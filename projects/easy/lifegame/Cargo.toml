@@ -1,0 +1,10 @@
+[package]
+name = "lifegame"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+crossterm = "0.28"
+rand = "0.9"

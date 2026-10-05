@@ -1,0 +1,8 @@
+[package]
+name = "pomodoro"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+ctrlc = "3"

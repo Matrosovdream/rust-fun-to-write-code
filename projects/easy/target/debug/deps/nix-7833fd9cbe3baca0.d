@@ -1,0 +1,14 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/easy/target/debug/deps/nix-7833fd9cbe3baca0.d: /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/lib.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/macros.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/errno.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/fcntl.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/mod.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/signal.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/time.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/unistd.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/wait.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/spawn.rs
+
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/easy/target/debug/deps/libnix-7833fd9cbe3baca0.rmeta: /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/lib.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/macros.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/errno.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/fcntl.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/mod.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/signal.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/time.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/unistd.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/wait.rs /Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/spawn.rs
+
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/lib.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/macros.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/errno.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/fcntl.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/mod.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/signal.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/time.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/unistd.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/sys/wait.rs:
+/Users/stan/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nix-0.31.3/src/spawn.rs:

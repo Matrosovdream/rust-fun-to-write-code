@@ -1,0 +1,11 @@
+CEO
+  VP Engineering
+    Backend Lead
+      Dev Alice
+      Dev Bob
+    Frontend Lead
+      Dev Carol
+  VP Sales
+    Rep Dave
+    Rep Eve
+  Office Manager

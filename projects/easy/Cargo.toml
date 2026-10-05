@@ -1,0 +1,38 @@
+[workspace]
+resolver = "3"
+members = [
+    "guessr",
+    "tempconv",
+    "calcli",
+    "fizzlab",
+    "romannum",
+    "caesar",
+    "rockpaper",
+    "tictactoe",
+    "wordcount",
+    "grepr",
+    "fibgen",
+    "shapes",
+    "rpn",
+    "anagram",
+    "wallet",
+    "orgtree",
+    "catr",
+    "headr",
+    "uniqr",
+    "todocli",
+    "kvstore",
+    "csvstat",
+    "jsonfmt",
+    "findr",
+    "logfilter",
+    "pomodoro",
+    "hashr",
+    "echoserver",
+    "weather",
+    "lifegame",
+]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"

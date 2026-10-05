@@ -1,0 +1,13 @@
+[package]
+name = "hashr"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+sha2 = "0.10"
+walkdir = "2"
+
+[dev-dependencies]
+tempfile = "3"

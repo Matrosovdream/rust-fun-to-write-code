@@ -1,0 +1,5 @@
+!Name: Glider
+!The smallest spaceship — travels diagonally, one cell every 4 generations.
+.O.
+..O
+OOO

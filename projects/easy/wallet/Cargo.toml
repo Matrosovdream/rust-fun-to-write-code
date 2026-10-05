@@ -1,0 +1,6 @@
+[package]
+name = "wallet"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
