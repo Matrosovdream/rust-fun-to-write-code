@@ -1,0 +1,6 @@
+[package]
+name = "ssefeed"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

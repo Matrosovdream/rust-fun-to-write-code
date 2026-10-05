@@ -1,0 +1,8 @@
+[package]
+name = "tunnel"
+version.workspace = true
+edition.workspace = true
+default-run = "tunnel-relay"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }

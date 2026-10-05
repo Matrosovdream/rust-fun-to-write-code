@@ -1,0 +1,6 @@
+[package]
+name = "linechat"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

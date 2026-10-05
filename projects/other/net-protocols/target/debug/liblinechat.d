@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/liblinechat.rlib: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/linechat/src/lib.rs

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ssefeed</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f6f8; --card: #fff; --ink: #1d2330; --muted: #6b7385;
+    --line: #e1e4ea; --accent: #2f6fde; --alert: #c9661a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14171c; --card: #1d2128; --ink: #e6e9ef; --muted: #8b93a5;
+            --line: #2c313a; --accent: #6ea0ff; --alert: #f0a35e; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 32px 16px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  h1 { margin: 0; font-size: 22px; }
+  p { color: var(--muted); margin: 4px 0 20px; }
+  code { font: 13px ui-monospace, Menlo, monospace; }
+  #status { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  #status::before { content: "● "; color: var(--muted); }
+  #status.live::before { color: #2ea44f; }
+  #status.down::before { color: #d1453b; }
+  form { display: flex; gap: 8px; margin-bottom: 20px; }
+  input { flex: 1; min-width: 0; padding: 10px 12px; font: inherit; color: var(--ink);
+          background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+  button { padding: 10px 18px; font: inherit; color: #fff; background: var(--accent);
+           border: 0; border-radius: 8px; cursor: pointer; }
+  ol { list-style: none; margin: 0; padding: 0; }
+  li { background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+       padding: 8px 12px; margin-bottom: 8px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  li.alert { border-left: 4px solid var(--alert); }
+  li small { color: var(--muted); margin-right: 10px; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>ssefeed</h1>
+    <span id="status">connecting…</span>
+  </header>
+  <p>Live feed over <code>EventSource('/events')</code>. Open a second tab, or publish
+     from a terminal: <code id="hint">curl -d hi …/publish</code></p>
+  <form id="form">
+    <input id="text" autocomplete="off" placeholder="Say something" required>
+    <button>Publish</button>
+  </form>
+  <ol id="feed"></ol>
+</main>
+<script>
+  const feed = document.getElementById('feed');
+  const statusEl = document.getElementById('status');
+  const form = document.getElementById('form');
+  const input = document.getElementById('text');
+  document.getElementById('hint').textContent = `curl -d hi ${location.host}/publish`;
+
+  function show(event, className) {
+    const item = document.createElement('li');
+    item.className = className;
+    const id = document.createElement('small');
+    id.textContent = '#' + event.lastEventId;
+    // append() with a string adds a text node, so message text is never parsed as HTML.
+    item.append(id, event.data);
+    feed.prepend(item);
+  }
+
+  const source = new EventSource('/events');
+  source.onopen = () => { statusEl.textContent = 'live'; statusEl.className = 'live'; };
+  // EventSource reconnects on its own and sends Last-Event-ID, so the server
+  // replays whatever we missed while we were away.
+  source.onerror = () => { statusEl.textContent = 'reconnecting…'; statusEl.className = 'down'; };
+  // `onmessage` only fires for type "message". Other types need their own
+  // listener: try  curl -d 'disk full' '127.0.0.1:8182/publish?event=alert'
+  source.onmessage = (event) => show(event, '');
+  source.addEventListener('alert', (event) => show(event, 'alert'));
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const text = input.value;
+    input.value = '';
+    const response = await fetch('/publish', { method: 'POST', body: text });
+    if (!response.ok) alert(await response.text());
+  });
+</script>
+</body>
+</html>

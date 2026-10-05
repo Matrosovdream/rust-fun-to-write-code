@@ -1,0 +1,7 @@
+[package]
+name = "binkv"
+version.workspace = true
+edition.workspace = true
+default-run = "binkv"
+
+[dependencies]

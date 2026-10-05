@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/udpping-client: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/udpping/src/bin/udpping-client.rs /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/udpping/src/lib.rs

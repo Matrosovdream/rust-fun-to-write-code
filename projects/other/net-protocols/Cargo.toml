@@ -1,0 +1,25 @@
+[workspace]
+resolver = "3"
+members = [
+    "linechat",
+    "smtpd",
+    "miniredis",
+    "binkv",
+    "jsonrpc",
+    "udpping",
+    "tftpd",
+    "dnsd",
+    "httpd",
+    "fetchr",
+    "restapi",
+    "ssefeed",
+    "websock",
+    "httpproxy",
+    "loadbal",
+    "asyncchat",
+    "tunnel",
+]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"

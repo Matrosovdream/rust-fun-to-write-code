@@ -1,0 +1,6 @@
+[package]
+name = "httpproxy"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

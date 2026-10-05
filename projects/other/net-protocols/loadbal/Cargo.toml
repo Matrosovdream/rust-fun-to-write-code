@@ -1,0 +1,7 @@
+[package]
+name = "loadbal"
+version.workspace = true
+edition.workspace = true
+default-run = "loadbal"
+
+[dependencies]

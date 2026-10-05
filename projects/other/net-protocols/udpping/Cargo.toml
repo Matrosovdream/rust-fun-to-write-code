@@ -1,0 +1,7 @@
+[package]
+name = "udpping"
+version.workspace = true
+edition.workspace = true
+default-run = "udpping"
+
+[dependencies]

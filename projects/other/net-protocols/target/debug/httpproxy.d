@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/httpproxy: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/httpproxy/src/lib.rs /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/httpproxy/src/main.rs

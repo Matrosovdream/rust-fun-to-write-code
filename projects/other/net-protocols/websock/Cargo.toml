@@ -1,0 +1,9 @@
+[package]
+name = "websock"
+version.workspace = true
+edition.workspace = true
+default-run = "websock"
+
+[dependencies]
+base64 = "0.22"
+sha1 = "0.10"

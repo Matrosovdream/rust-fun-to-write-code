@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/jsonrpc-client: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/jsonrpc/src/bin/jsonrpc-client.rs /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/jsonrpc/src/lib.rs

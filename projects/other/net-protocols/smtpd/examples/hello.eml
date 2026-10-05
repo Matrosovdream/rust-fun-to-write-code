@@ -1,0 +1,8 @@
+From: Alice <alice@example.com>
+To: Bob <bob@example.com>
+Subject: hello from curl
+
+Hi Bob,
+
+This message went through smtpd.
+.This line starts with a dot: curl sends it as "..This", smtpd strips it back.

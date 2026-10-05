@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/libbinkv.rlib: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/binkv/src/lib.rs

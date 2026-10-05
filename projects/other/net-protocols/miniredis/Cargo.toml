@@ -1,0 +1,7 @@
+[package]
+name = "miniredis"
+version.workspace = true
+edition.workspace = true
+default-run = "miniredis"
+
+[dependencies]

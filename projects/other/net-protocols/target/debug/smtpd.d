@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/smtpd: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/smtpd/src/lib.rs /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/smtpd/src/main.rs

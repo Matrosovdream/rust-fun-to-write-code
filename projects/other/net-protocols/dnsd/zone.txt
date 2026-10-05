@@ -1,0 +1,13 @@
+# dnsd zone file: one record per line.
+#
+#   name             TTL   TYPE   value
+#
+# Names are case-insensitive and a trailing dot is optional. TXT values go
+# in double quotes. Supported types: A, AAAA, CNAME, TXT. The addresses are
+# from the ranges reserved for documentation (RFC 5737, RFC 3849).
+
+hello.test         300   A      192.0.2.1
+hello.test         300   A      192.0.2.2
+hello.test         300   AAAA   2001:db8::1
+hello.test         300   TXT    "hello from dnsd"
+www.hello.test     300   CNAME  hello.test

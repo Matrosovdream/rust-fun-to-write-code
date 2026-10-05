@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>websock chat</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f6f8; --card: #fff; --ink: #1d2330; --muted: #6b7385;
+    --line: #e1e4ea; --accent: #2f6fde;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14171c; --card: #1d2128; --ink: #e6e9ef; --muted: #8b93a5;
+            --line: #2c313a; --accent: #6ea0ff; }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 640px; height: 100%; margin: 0 auto; padding: 24px 16px;
+         display: flex; flex-direction: column; gap: 12px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  h1 { margin: 0; font-size: 22px; }
+  #status { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  #status::before { content: "● "; }
+  #status.online::before { color: #2ea44f; }
+  #status.offline::before { color: #d1453b; }
+  #log { flex: 1; overflow-y: auto; list-style: none; margin: 0; padding: 12px;
+         background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+  #log li { padding: 3px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+  #log li.notice { color: var(--muted); font-size: 13px; }
+  form { display: flex; gap: 8px; }
+  input { flex: 1; min-width: 0; padding: 10px 12px; font: inherit; color: var(--ink);
+          background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+  button { padding: 10px 18px; font: inherit; color: #fff; background: var(--accent);
+           border: 0; border-radius: 8px; cursor: pointer; }
+  button:disabled { opacity: 0.5; cursor: default; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>websock chat</h1>
+    <span id="status">connecting…</span>
+  </header>
+  <ul id="log"></ul>
+  <form id="form">
+    <input id="text" autocomplete="off" placeholder="Type a message" required>
+    <button id="send" disabled>Send</button>
+  </form>
+</main>
+<script>
+  const log = document.getElementById('log');
+  const statusEl = document.getElementById('status');
+  const form = document.getElementById('form');
+  const input = document.getElementById('text');
+  const sendButton = document.getElementById('send');
+  let socket;
+
+  function show(text) {
+    const item = document.createElement('li');
+    // Server notices start with "* ". textContent never parses HTML.
+    if (text.startsWith('* ')) item.className = 'notice';
+    item.textContent = text;
+    log.append(item);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function setStatus(text, online) {
+    statusEl.textContent = text;
+    statusEl.className = online ? 'online' : 'offline';
+    sendButton.disabled = !online;
+  }
+
+  function connect() {
+    const scheme = location.protocol === 'https:' ? 'wss://' : 'ws://';
+    socket = new WebSocket(scheme + location.host + '/ws');
+    socket.onopen = () => setStatus('online', true);
+    socket.onmessage = (event) => show(event.data);
+    // The browser answers pings and does the close handshake for us. When the
+    // connection drops, try again in two seconds.
+    socket.onclose = (event) => {
+      setStatus('offline', false);
+      show(`* disconnected (code ${event.code}), retrying…`);
+      setTimeout(connect, 2000);
+    };
+  }
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (socket.readyState === WebSocket.OPEN) {
+      socket.send(input.value); // the browser masks and frames it
+      input.value = '';
+    }
+  });
+
+  connect();
+</script>
+</body>
+</html>

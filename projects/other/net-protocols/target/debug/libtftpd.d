@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/libtftpd.rlib: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/tftpd/src/lib.rs /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/tftpd/src/packet.rs

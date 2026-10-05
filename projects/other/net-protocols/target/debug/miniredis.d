@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/miniredis: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/miniredis/src/lib.rs /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/miniredis/src/main.rs

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>httpd</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>It works.</h1>
+    <p>This page came from <code>httpd</code>, a static file server written from
+      raw TCP sockets: a hand-written HTTP/1.1 parser, a thread pool, and about
+      as many lines of Rust as fit in an evening.</p>
+
+    <h2>Things to poke at</h2>
+    <ul>
+      <li><a href="/files/">/files/</a>: a directory with no <code>index.html</code>, so you get a listing</li>
+      <li><a href="/files">/files</a>: no trailing slash, so you get a 301 first</li>
+      <li><a href="/files/hello.txt">/files/hello.txt</a>: plain text</li>
+      <li><a href="/nope">/nope</a>: a 404</li>
+    </ul>
+
+    <h2>From a terminal</h2>
+<pre>curl -v 127.0.0.1:8180/
+curl -I 127.0.0.1:8180/style.css
+curl -v --path-as-is 127.0.0.1:8180/../Cargo.toml   # 403
+curl -v 127.0.0.1:8180/ 127.0.0.1:8180/style.css    # one connection</pre>
+  </main>
+</body>
+</html>

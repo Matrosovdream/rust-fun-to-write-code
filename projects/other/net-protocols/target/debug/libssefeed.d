@@ -1,0 +1,1 @@
+/Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/target/debug/libssefeed.rlib: /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/ssefeed/src/lib.rs /Users/stan/Desktop/Projects/rust-fun-to-write-code/projects/other/net-protocols/ssefeed/static/index.html
