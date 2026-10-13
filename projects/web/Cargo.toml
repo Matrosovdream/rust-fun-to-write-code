@@ -1,0 +1,12 @@
+[workspace]
+resolver = "3"
+members = [
+    "todoapi",
+    "chatws",
+    "fileserve",
+    "metricsd",
+]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"

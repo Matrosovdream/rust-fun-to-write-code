@@ -1,0 +1,12 @@
+[package]
+name = "fileserve"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+bytes = "1"
+
+[dev-dependencies]
+tempfile = "3"
+
